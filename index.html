@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional - Tema Cheese</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #fdfbea;
+        }
+        h1 {
+            color: #444;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0fff0;
+            border: 1px solid #ccc;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Apakah Kita Punya Keju untuk Toast?</h1>
+    <button onclick="cekKeju()">Cek Ketersediaan Keju</button>
+    <div id="output"></div>
+
+    <script>
+        function cekKeju() {
+            let cheese = prompt("Masukkan jenis keju yang tersedia (contoh: cheddar, mozarella, dll):");
+            let message = "";
+
+            if (!cheese || cheese.trim() === "") {
+                message = "Kamu tidak memasukkan nama keju.";
+            } else if (cheese.toLowerCase() === "cheddar") {
+                message = "Yay! Cheese available for making cheese on toast.";
+            } else {
+                message = "No cheese on toast for you today.";
+            }
+
+            document.getElementById("output").textContent = message;
+            alert(message);
+        }
+    </script>
+
+</body>
+</html>
